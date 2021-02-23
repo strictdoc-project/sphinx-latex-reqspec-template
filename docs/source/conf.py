@@ -68,7 +68,8 @@ master_doc = "index"
 # -- Options for PDF/TEX output
 latex_engine = "xelatex"
 
-latex_logo = "_static/logo.jpg"
+# TODO
+# latex_logo = "_static/logo.jpg"
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
