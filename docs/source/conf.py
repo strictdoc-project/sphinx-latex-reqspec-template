@@ -115,7 +115,7 @@ latex_elements = {
 
         \setcounter{secnumdepth}{10}
         \setcounter{tocdepth}{6}
-        
+
         \newdateformat{MonthYearFormat}{%
             \monthname[\THEMONTH], \THEYEAR}
 
@@ -171,14 +171,14 @@ latex_elements = {
                       {\raisebox{0.038cm}{\eqparbox{ch}{\thecontentslabel}\hspace{0.2cm}}}
                       {}
                       {\titlerule*[10pt]{$\cdot$}\contentspage}
-        
+
         \titlecontents{section}
                       [0.5cm]
                       {\vspace{.25\baselineskip}}
                       {\raisebox{0.038cm}{\eqparbox{S}{\thecontentslabel}\hspace{0.2cm}}}
                       {}
                       {\titlerule*[10pt]{$\cdot$}\contentspage}
-        
+
         \titlecontents{subsection}
                       [1cm]
                       {\vspace{.25\baselineskip}}
@@ -192,7 +192,7 @@ latex_elements = {
                       {\raisebox{0.038cm}{\eqparbox{Sss}{\thecontentslabel}\hspace{0.2cm}}}
                       {}
                       {\titlerule*[10pt]{$\cdot$}\contentspage}
-        
+
         \titlecontents{paragraph}
                       [2cm]
                       {\vspace{.25\baselineskip}}
@@ -208,55 +208,62 @@ latex_elements = {
                       {\titlerule*[10pt]{$\cdot$}\contentspage}
 
         \newcommand{\tablecell}[1] {{{#1}}}
-        
-        \titleformat{\chapter}[hang] 
-            {\normalfont\huge\bfseries}{\thechapter.}{3mm}{} 
+
+        \titleformat{\chapter}[hang]
+            {\normalfont\huge\bfseries}{\thechapter.}{3mm}{}
         \titlespacing*{\chapter}{0pt}{-24pt}{18pt}
 
         \makeatletter
-            \newcommand\sdocfronttitlefont{\Huge}
-            \newcommand\sdocfrontsubtitlefont{\@setfontsize\Huge{16}{16}}
+            \newcommand\templatefronttitlefont{\Huge}
+            \newcommand\templatefrontsubtitlefont{\@setfontsize\Huge{16}{16}}
         \makeatother
     """,
     "maketitle": RubyTemplate(
         r"""
         \pagenumbering{Roman} %%% to avoid page 1 conflict with actual page 1
 
-        \begin{titlepage}   
+        \begin{titlepage}
             \vspace*{50mm} %%% * is used to give space from top
 
             \begin{center}
-                \sdocfronttitlefont{\textbf{sphinx-latex-reqspec-template}}
-                
+                \templatefronttitlefont{\textbf{sphinx-latex-reqspec-template}}
+
                 \vspace{5mm}
 
-                \sdocfrontsubtitlefont{{Template for requirements and specifications documents}}
-                % \Large{{management framework}}
+                \templatefrontsubtitlefont{{Template for requirements and specifications documents}}
             \end{center}
 
             \vspace{30mm}
 
             \begin{flushright}
                 \bgroup
-                    \def\arraystretch{1.9}%  1 is the default, change whatever you need
+                    % Vertical space distribution when arraystretch is increased
+                    % https://tex.stackexchange.com/a/394792/61966
+                    \def\arraystretch{2}%  1 is the default, change whatever you need
+                    \setlength\extrarowheight{-2pt}
                     \begin{tabular}{|p{4.85cm}|p{11.7cm}|}
                     \hline
-                    \textbf{{Project goals:}} & 
-                    \makecell[l]{ 
-                        A good template for requirements and specifications documents.
-                    } 
+                    \textbf{{Project goal:}} &
+                    \makecell[l]{
+                        A template for requirements and specifications documents.
+                    }
                     \\ \hline
-                    \textbf{{Supported documents:}} & \tablecell {Requirements document/specification, technical manual} \\ \hline
-                    \textbf{{License model:}} & \tablecell {Open source software, Apache 2 license} \\ \hline
-                    \textbf{{Project page:}} & \tablecell {https://github.com/stanislaw/sphinx-latex-reqspec-template} \\ \hline
-                    \textbf{{Release date:}} & \tablecell {\MonthYearFormat\today} \\ \hline
-                    \textbf{{Version:}} & \tablecell #{VERSION} \\ \hline
+                    \textbf{{Target documents:}} & \tablecell {Requirements document/specification, technical manual}
+                    \\ \hline
+                    \textbf{{License model:}} & \tablecell {Open source software, Apache 2 license}
+                    \\ \hline
+                    \textbf{{Project page:}} & \tablecell {https://github.com/stanislaw/sphinx-latex-reqspec-template}
+                    \\ \hline
+                    \textbf{{Release date:}} & \tablecell {\MonthYearFormat\today}
+                    \\ \hline
+                    \textbf{{Version:}} & \tablecell #{VERSION}
+                    \\ \hline
                     \end{tabular}
                 \egroup
             \end{flushright}
 
             %% \vfill adds at the bottom
-            \vfill 
+            \vfill
 
             \begin{center}
                 \Large{© 2021 sphinx-latex-reqspec-template}
