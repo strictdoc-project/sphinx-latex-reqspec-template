@@ -112,6 +112,8 @@ latex_elements = {
         \usepackage{hyperref}
         \usepackage{fancyhdr}
         \usepackage{makecell}
+        \usepackage{eqparbox}
+        \usepackage{titletoc}
 
         \setcounter{secnumdepth}{10}
         \setcounter{tocdepth}{6}
@@ -161,9 +163,6 @@ latex_elements = {
                 \renewcommand{\footrulewidth}{1.0pt}
             }
         \makeatother
-
-        \usepackage{eqparbox}
-        \usepackage{titletoc}
 
         \titlecontents{chapter}
                       [0em]
