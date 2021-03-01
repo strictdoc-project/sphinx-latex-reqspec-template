@@ -44,12 +44,14 @@ def clean(context):
 
 @task
 def sphinx(context):
+    cwd = os.getcwd()
     run_invoke_cmd(
         context,
         oneline_command(
-            """
+            f"""
             cd docs &&
                 SPHINXOPTS="-W --keep-going -n" make html latexpdf &&
+                cp build/latex/sphinx-latex-reqspec-template.pdf {cwd}/Template.pdf &&
                 open build/latex/sphinx-latex-reqspec-template.pdf
             """
         ),

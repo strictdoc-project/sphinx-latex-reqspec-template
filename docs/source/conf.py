@@ -140,7 +140,7 @@ latex_elements = {
                     \textnormal{\nouppercase{sphinx-latex-reqspec-template}}
                     \textcolor{red}{\textbf{Draft}}
                     % trim: left top
-                    % \vspace*{0.4cm}{\includegraphics[trim=-1cm 1.15cm 0 -0cm, scale=.35]{PTS_bow.png}}
+                    % \vspace*{0.4cm}{\includegraphics[trim=-1cm 1.15cm 0 -0cm, scale=.35]{bow.png}}
                 }
                 \fancyfoot[R]{
                     \thepage
@@ -154,7 +154,7 @@ latex_elements = {
                 \fancyhead[R]{
                     \textnormal{\nouppercase{sphinx-latex-reqspec-template}}
                     \textcolor{red}{\textbf{Draft}}
-                    % \vspace*{0.4cm}{\includegraphics[trim=-1cm 1.15cm 0cm 0cm, scale=.35]{PTS_bow.png}}
+                    % \vspace*{0.4cm}{\includegraphics[trim=-1cm 1.15cm 0cm 0cm, scale=.35]{bow.png}}
                 }
                 \fancyfoot[R]{
                     \thepage
