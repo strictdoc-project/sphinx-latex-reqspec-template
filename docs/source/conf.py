@@ -247,8 +247,6 @@ latex_elements = {
                     \\ \hline
                     \textbf{{Target documents:}} & \tablecell {Requirements document/specification, technical manual}
                     \\ \hline
-                    \textbf{{License model:}} & \tablecell {Open source software, Apache 2 license}
-                    \\ \hline
                     \textbf{{Project page:}} & \tablecell {https://github.com/stanislaw/sphinx-latex-reqspec-template}
                     \\ \hline
                     \textbf{{Release date:}} & \tablecell {\MonthYearFormat\today}
