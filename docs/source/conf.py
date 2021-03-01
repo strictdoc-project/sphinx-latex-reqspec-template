@@ -112,6 +112,8 @@ latex_elements = {
         \usepackage{hyperref}
         \usepackage{fancyhdr}
         \usepackage{makecell}
+        \usepackage{eqparbox}
+        \usepackage{titletoc}
 
         \setcounter{secnumdepth}{10}
         \setcounter{tocdepth}{6}
@@ -161,9 +163,6 @@ latex_elements = {
                 \renewcommand{\footrulewidth}{1.0pt}
             }
         \makeatother
-
-        \usepackage{eqparbox}
-        \usepackage{titletoc}
 
         \titlecontents{chapter}
                       [0em]
@@ -220,8 +219,6 @@ latex_elements = {
     """,
     "maketitle": RubyTemplate(
         r"""
-        \pagenumbering{Roman} %%% to avoid page 1 conflict with actual page 1
-
         \begin{titlepage}
             \vspace*{50mm} %%% * is used to give space from top
 
@@ -271,16 +268,12 @@ latex_elements = {
 
         \end{titlepage}
 
-        \clearpage
-
-        \pagenumbering{roman}
-        \pagestyle{plain}
+        \pagestyle{normal}
+        \setcounter{page}{2}
         \tableofcontents
         %% \listoffigures
         %% \listoftables
         \clearpage
-        \pagestyle{normal}
-        \pagenumbering{arabic}
         """
     ).substitute(VERSION=VERSION),
 }
